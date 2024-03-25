@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 
 import br.com.campiotto.math.SimpleMath;
 
@@ -46,9 +47,10 @@ public class SimpleMathTest {
         double firstNumber = 1;
         double secondNumber = 0;
 
-        Double result = math.division(firstNumber, secondNumber);
+        Assertions.assertThrows(ArithmeticException.class, () ->  {
+            math.division(firstNumber, secondNumber);
+        }, () -> "Should throw ArithmeticException");
 
-        fail();
     }
 
     @Test
