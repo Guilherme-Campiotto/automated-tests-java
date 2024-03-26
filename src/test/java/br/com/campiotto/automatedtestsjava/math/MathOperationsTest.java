@@ -8,16 +8,16 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
-import br.com.campiotto.math.SimpleMath;
+import br.com.campiotto.math.MathOperations;
 
 @DisplayName("Test math operations")
-public class SimpleMathTest {
+public class MathOperationsTest {
 
-    SimpleMath math;
+    MathOperations math;
 
     @BeforeEach
     void beforeEachMethod() {
-        math = new SimpleMath();
+        math = new MathOperations();
     }
 
     @Test

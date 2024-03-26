@@ -1,6 +1,6 @@
 package br.com.campiotto.math;
 
-public class SimpleMath {
+public class MathOperations {
 
     public Double sum(Double firstNumber, Double secondNumber) {
         return firstNumber + secondNumber;
