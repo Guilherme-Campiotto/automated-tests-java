@@ -1,12 +1,12 @@
 package br.com.campiotto.automatedtestsjava.math;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
+import org.junit.jupiter.api.Timeout;
 
 import br.com.campiotto.math.SimpleMath;
 
@@ -22,6 +22,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testSum() {
         double firstNumber = 6.2D;
         double secondNumber = 2D;
@@ -32,6 +33,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test 21 / 3 = 7")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testDivision() {
         double firstNumber = 21;
         double secondNumber = 3D;
@@ -42,6 +44,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test division by zero")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testDivisionByZero() {
 
         double firstNumber = 1;
@@ -55,6 +58,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test 6 - 2 = 4")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testSubtraction() {
 
         double firstNumber = 6D;
@@ -68,6 +72,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test 5 * 2 = 10")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testMultiplication() {
         double firstNumber = 5D;
         double secondNumber = 2D;
@@ -78,6 +83,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test (5 + 2) / 2 = 3.5")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testMean() {
         double firstNumber = 5D;
         double secondNumber = 2D;
@@ -88,6 +94,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test root of 4 = 2")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testSquareRoot() {
         double number = 4D;
         Double result = math.squareRoot(number);
