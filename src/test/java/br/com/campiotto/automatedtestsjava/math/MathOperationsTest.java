@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import br.com.campiotto.math.MathOperations;
 
@@ -31,14 +33,16 @@ public class MathOperationsTest {
         Assertions.assertEquals(expectedResult, result, firstNumber + " + " + secondNumber + "didn't produce " + expectedResult);
     }
 
-    @Test
-    @DisplayName("Test 21 / 3 = 7")
+    @ParameterizedTest
+    @CsvSource({
+        "21, 3, 7",
+        "50, 10, 5",
+        "9, 2, 4.5"
+    })
+    @DisplayName("Test division")
     @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
-    void testDivision() {
-        double firstNumber = 21;
-        double secondNumber = 3D;
+    void testDivision(double firstNumber, double secondNumber, double expectedResult) {
         Double result = math.division(firstNumber, secondNumber);
-        Double expectedResult = 7D;
         Assertions.assertEquals(expectedResult, result, firstNumber + " + " + secondNumber + "didn't produce " + expectedResult);
     }
 
